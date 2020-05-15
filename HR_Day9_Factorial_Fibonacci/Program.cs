@@ -16,7 +16,7 @@ namespace HR_Day9_Factorial
         }
         static int fibonacci(int num)
         {
-            
+            /* Recrusive calling solution
             if(num == 0 )
             {
                 return 0;
@@ -25,9 +25,28 @@ namespace HR_Day9_Factorial
             {
                 return 1;
             }
-            return fibonacci(num - 1) + fibonacci(num - 2);
-            
+            return fibonacci(num - 1) + fibonacci(num - 2); */
 
+            /* Looping solution */
+            int temp = 0;
+            int num1 = 0, num2 = 1;
+            Console.WriteLine("Fibonacci series");
+            for (int i = 0; i <= num; i++)
+            {
+                if (i > 1)
+                {
+                    temp = num1 + num2;
+                    num1 = num2;
+                    num2 = temp;
+                }
+                else
+                {
+                    temp = temp + i;
+                }
+
+                Console.WriteLine(temp);
+            }
+            return temp;
         }
 
         static void Main(string[] args)
